@@ -1,4 +1,6 @@
-name: Build Android APK
+name: - name: Build APK with Flet
+        run: |
+          flet build apk
 
 on:
   push:
