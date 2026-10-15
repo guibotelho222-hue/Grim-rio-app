@@ -1,6 +1,4 @@
-name: - name: Build APK with Flet
-        run: |
-          flet build apk
+name: Build Android APK
 
 on:
   push:
@@ -38,7 +36,7 @@ jobs:
 
       - name: Build APK with Flet
         run: |
-          flet build apk --project-name "Grimorio"
+          flet build apk
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
