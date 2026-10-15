@@ -1,0 +1,169 @@
+{
+  "config": {
+    "nome_personagem": "Lady Morgana",
+    "titulo_personagem": "Arquimaga do Reino",
+    "paleta": "Obsidian Clássico",
+    "haptic": true,
+    "sons": true,
+    "titulos_abas": {
+      "quests": "📜 Quests",
+      "cofre": "💰 Cofre",
+      "forja": "⚒️ A Forja",
+      "cronicas": "📖 Crônicas",
+      "foco": "🧪 Poção de Foco"
+    }
+  },
+  "gamificacao": {
+    "nivel": 2,
+    "xp": 145,
+    "xp_proximo": 150,
+    "pocoes_tomadas": 0,
+    "ingredientes_raros": {
+      "Flor de Lótus Lunar": 1,
+      "Pó de Estrela Cadente": 0,
+      "Cristal de Éter Rúnico": 0,
+      "Lágrima de Fênix Dourada": 0,
+      "Orvalho da Floresta Espectral": 0,
+      "Fragmento de Meteorito Arcano": 0
+    }
+  },
+  "quests": [
+    {
+      "id": "q1",
+      "titulo": "Revisar os Tratados do Conselho Real",
+      "categoria": "Quest Principal",
+      "prioridade": "🔴 Crítico",
+      "data": "2026-10-13",
+      "hora": "14:00",
+      "concluida": false,
+      "detalhes": "Assinar decretos e despachar mensageiros."
+    },
+    {
+      "id": "q2",
+      "titulo": "Coleta de Ervas e Flores Lunares",
+      "categoria": "Rituais",
+      "prioridade": "🟡 Importante",
+      "data": "2026-10-13",
+      "hora": "17:30",
+      "concluida": false,
+      "detalhes": "Preparar infusão para o laboratório alquímico."
+    },
+    {
+      "id": "q3",
+      "titulo": "Organizar os Frascos da Dispensa",
+      "categoria": "Missão Secundária",
+      "prioridade": "🟢 Normal",
+      "data": "2026-10-13",
+      "hora": "19:00",
+      "concluida": false,
+      "detalhes": "Limpar estantes do castelo."
+    }
+  ],
+  "cofre": {
+    "categorias": [
+      {
+        "id": "c1",
+        "nome": "Banquete & Alimentos",
+        "limite_po": 1200.0,
+        "gasto_po": 650.0
+      },
+      {
+        "id": "c2",
+        "nome": "Manutenção da Fortaleza",
+        "limite_po": 800.0,
+        "gasto_po": 680.0
+      },
+      {
+        "id": "c3",
+        "nome": "Vestimentas Nobres",
+        "limite_po": 500.0,
+        "gasto_po": 150.0
+      },
+      {
+        "id": "c4",
+        "nome": "Poções & Cuidados",
+        "limite_po": 400.0,
+        "gasto_po": 120.0
+      }
+    ],
+    "gastos": [
+      {
+        "id": "g1",
+        "categoria": "Manutenção da Fortaleza",
+        "valor_po": 200.0,
+        "desc": "Reparo nas muralhas",
+        "data": "2026-10-13"
+      },
+      {
+        "id": "g2",
+        "categoria": "Banquete & Alimentos",
+        "valor_po": 150.0,
+        "desc": "Especiarias do oriente",
+        "data": "2026-10-13"
+      }
+    ]
+  },
+  "forja": {
+    "habitos": [
+      {
+        "id": "h1",
+        "nome": "Meditação Arcana (20 min)",
+        "dias": 9,
+        "alvo": 21,
+        "ultimo_dia": "2026-10-14"
+      },
+      {
+        "id": "h2",
+        "nome": "Treino com a Espada Rúnica",
+        "dias": 15,
+        "alvo": 30,
+        "ultimo_dia": "2026-10-14"
+      },
+      {
+        "id": "h3",
+        "nome": "Leitura do Livro das Sombras",
+        "dias": 4,
+        "alvo": 21,
+        "ultimo_dia": "2026-10-14"
+      }
+    ],
+    "projetos": [
+      {
+        "id": "p1",
+        "titulo": "Restauração da Biblioteca Proibida",
+        "desc": "Catalogar tomos e restaurar pergaminhos.",
+        "etapas": [
+          {
+            "id": "e1",
+            "titulo": "Limpeza das prateleiras de carvalho",
+            "concluida": true
+          },
+          {
+            "id": "e2",
+            "titulo": "Encadernação dos grimórios rasgados",
+            "concluida": true
+          },
+          {
+            "id": "e3",
+            "titulo": "Proteção rúnica contra traças e fogo",
+            "concluida": true
+          }
+        ]
+      }
+    ],
+    "historico_dias": {}
+  },
+  "cronicas": [
+    "[2026-10-14 19:18] ⭐ +25 XP: Etapa 'Proteção rúnica contra traças e fogo' concluída!",
+    "[2026-10-14 19:18] ⭐ +25 XP: Etapa 'Encadernação dos grimórios rasgados' concluída!",
+    "[2026-10-14 19:18] ⭐ +25 XP: Etapa 'Limpeza das prateleiras de carvalho' concluída!",
+    "[2026-10-14 19:18] ⭐ +20 XP: Hábito 'Meditação Arcana (20 min)' forjado hoje",
+    "[2026-10-14 19:18] ⭐ +20 XP: Hábito 'Treino com a Espada Rúnica' forjado hoje",
+    "[2026-10-14 19:17] ⭐ +20 XP: Hábito 'Leitura do Livro das Sombras' forjado hoje",
+    "[2026-10-14 19:17] ✨ SUBIU DE NÍVEL! Lady Morgana agora é Nível 2 (Guardiã do Castelo)!",
+    "[2026-10-14 19:17] ⭐ +25 XP: Etapa 'Proteção rúnica contra traças e fogo' concluída!",
+    "[2026-10-13 22:12] ⭐ +20 XP: Hábito 'Meditação Arcana (20 min)' forjado hoje",
+    "[2026-10-13 22:12] ⭐ +30 XP: Conclusão da Quest 'Revisar os Tratados do Conselho Real'",
+    "[2026-10-13 22:12] ⭐ Início da jornada no Grimório & Caixa do Reino."
+  ]
+}
