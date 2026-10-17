@@ -2,7 +2,39 @@
 Grimório Mobile - Aplicativo Dark Fantasy & Gestão do Reino (Edição Android)
 Arquitetura Síncrona, Layout Mobile Portrait Responsivo e Otimizado para Flet Build APK.
 """
+name: Build Flet APK
 
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.19.x'
+        cache: true
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flet
+
+    - name: Build APK with Flet
+      run: |
+        flet build apk --include-assets --yes
 import os
 import sys
 import flet as ft
