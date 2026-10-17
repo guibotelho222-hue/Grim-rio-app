@@ -1,4 +1,7 @@
-name: Build Android APK
+[tool.flet]
+org = "com.grimorio"
+product = "grimorio"
+version = "2.0.0"  # <-- Mude para 2.0.0 (se estiver 1.0.0, o Android acha que é a mesma versão)name: Build Android APK
 
 on:
   push:
