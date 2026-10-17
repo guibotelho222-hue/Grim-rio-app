@@ -1,0 +1,161 @@
+{
+  "versao": "2.0.0",
+  "ultimo_mes_processado": "2026-10",
+  "reino": {
+    "nome_rainha": "Minha Rainha",
+    "nome_reino": "Reino de Eldoria",
+    "nivel": 2,
+    "titulo_nivel": "Forte de Pedra",
+    "exp_atual": 45,
+    "exp_proximo": 435,
+    "ouro_tesouro": 425.0
+  },
+  "pet": {
+    "nome": "Sir Fagulha",
+    "titulo": "Gato Alado Guardião",
+    "humor": "Valente e Brincalhão",
+    "nivel_afeto": 100,
+    "energia": 80,
+    "fome": 90,
+    "ultimo_cuidado": "2026-10-17"
+  },
+  "emocional": {
+    "historico": [
+      {
+        "data": "2026-10-17",
+        "humor": "Tranquila",
+        "desabafo": "Hoje iniciei a nova jornada no reino com o coração sereno.",
+        "resposta_rei": "Que a paz do teu coração seja a muralha que protege nossos dias mais felizes, minha Rainha."
+      }
+    ],
+    "ultima_runa": {
+      "nome": "Runa da Coragem (Tiwaz)",
+      "simbolo": "ᛏ",
+      "elemento": "Lâmina da Justiça",
+      "mensagem": "Erga a tua cabeça. A justiça, a nobreza e a bravura correm em tuas veias. Enfrente o dia com ousadia.",
+      "data": "2026-10-17"
+    }
+  },
+  "quests": [
+    {
+      "id": "13d1c486-cecd-42fc-a879-0c1c95572b0f",
+      "titulo": "Consagrar o Alvorecer do Reino",
+      "categoria": "Principal",
+      "dificuldade": "Média",
+      "recompensa_ouro": 30.0,
+      "recompensa_exp": 40,
+      "data_limite": "2026-10-17",
+      "concluida": true,
+      "data_conclusao": "2026-10-17"
+    },
+    {
+      "id": "24e2c597-dece-53ed-b98a-1d2d06683c1a",
+      "titulo": "Organizar os pergaminhos da semana",
+      "categoria": "Diária",
+      "dificuldade": "Fácil",
+      "recompensa_ouro": 15.0,
+      "recompensa_exp": 20,
+      "data_limite": "2026-10-17",
+      "concluida": false,
+      "data_conclusao": null
+    },
+    {
+      "id": "35f3d6a8-efdf-64fe-ca9b-2e3e17794d2b",
+      "titulo": "Revisar as finanças do trono real",
+      "categoria": "Coroa",
+      "dificuldade": "Lendária",
+      "recompensa_ouro": 60.0,
+      "recompensa_exp": 80,
+      "data_limite": "2026-10-17",
+      "concluida": false,
+      "data_conclusao": null
+    }
+  ],
+  "cofre": {
+    "reserva_do_reino": 1200.0,
+    "divida_da_coroa": 0.0,
+    "transacoes": [
+      {
+        "id": "e572a120-3f7e-43c7-8603-12d160605257",
+        "tipo": "entrada",
+        "titulo": "Tributos do Comércio Nobre",
+        "valor": 1500.0,
+        "categoria": "Tributos",
+        "data": "2026-10-17",
+        "mes_ano": "2026-10"
+      },
+      {
+        "id": "f683b231-4a8f-54d8-a714-23e271716368",
+        "tipo": "saida",
+        "titulo": "Provisões e Banquete da Corte",
+        "valor": 320.0,
+        "categoria": "Essenciais",
+        "data": "2026-10-17",
+        "mes_ano": "2026-10"
+      }
+    ],
+    "historico_fechamentos": {},
+    "teto_gastos_mes": 3000.0
+  },
+  "forja": {
+    "habitos": [
+      {
+        "id": "59c0f8d3-f401-4024-a4bd-3239ddf38bac",
+        "nome": "Beber Elixir Vital (2L de Água)",
+        "tipo": "HP",
+        "streak_atual": 4,
+        "melhor_streak": 12,
+        "concluido_hoje": false,
+        "datas_concluidas": []
+      },
+      {
+        "id": "87e045ea-f5de-446d-940f-5a0063d94511",
+        "nome": "Leitura Arcana (20 minutos)",
+        "tipo": "Mana",
+        "streak_atual": 7,
+        "melhor_streak": 15,
+        "concluido_hoje": true,
+        "datas_concluidas": [
+          "2026-10-17"
+        ]
+      },
+      {
+        "id": "d598da5b-7300-4f91-8cb8-9cc5617ae3dc",
+        "nome": "Caminhada pelos Jardins Reais",
+        "tipo": "HP",
+        "streak_atual": 2,
+        "melhor_streak": 5,
+        "concluido_hoje": false,
+        "datas_concluidas": []
+      },
+      {
+        "id": "19330e9d-7e57-43b1-9d36-472d8e9010b5",
+        "nome": "Meditação & Gratidão",
+        "tipo": "Ouro",
+        "streak_atual": 5,
+        "melhor_streak": 20,
+        "concluido_hoje": true,
+        "datas_concluidas": [
+          "2026-10-17"
+        ]
+      }
+    ]
+  },
+  "foco": {
+    "minutos_foco": 25,
+    "minutos_descanso": 5,
+    "total_pomodoros": 8,
+    "tempo_total_minutos": 200
+  },
+  "configuracoes": {
+    "nome_rainha": "Minha Rainha",
+    "tema_atual": "Dark Fantasy Dourado",
+    "nomes_abas": {
+      "trono": "Trono",
+      "quests": "Quests",
+      "cofre": "Cofre",
+      "forja": "Forja",
+      "foco": "Foco"
+    }
+  }
+}

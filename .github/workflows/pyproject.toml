@@ -1,0 +1,28 @@
+[project]
+name = "grimorio"
+version = "2.0.0"
+description = "Grimório - Dark Fantasy RPG & Gestão do Reino (Edição Mobile)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "flet>=0.25.0",
+    "pillow>=9.0.0"
+]
+
+[tool.flet]
+org = "com.grimorio"
+product = "app"
+company = "Grimorio Studio"
+copyright = "Copyright (c) 2026 Grimorio"
+
+[tool.flet.app]
+path = "."
+
+[tool.flet.android]
+package = "com.grimorio.app"
+version = "2.0.0"
+build_number = 2
+icon = "assets/logo.png"
+splash_color = "#121214"
+deep_linking = false
+permissions = []

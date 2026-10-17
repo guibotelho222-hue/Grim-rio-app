@@ -1,22 +1,21 @@
 """
-Grimório - Versão Final e Definitiva
-Aplicativo de Produtividade & Gestão Pessoal Dark Fantasy Moderno
-Arquitetura 100% Síncrona, Resolução de Caminhos com sys._MEIPASS
+Grimório Mobile - Aplicativo Dark Fantasy & Gestão do Reino (Edição Android)
+Arquitetura Síncrona, Layout Mobile Portrait Responsivo e Otimizado para Flet Build APK.
 """
 
 import os
 import sys
 import flet as ft
 
-# Configuração de Caminhos de Assets com suporte a PyInstaller e Executável
+# Configuração de Caminhos de Assets com suporte a Mobile e Executáveis
 def resolve_path(relative_path: str) -> str:
-    """Resolve caminhos absolutos em modo Dev, Executável PyInstaller (_MEIPASS) e Pacote Mobile."""
+    """Resolve caminhos em modo Dev, Mobile (Android/iOS) e PyInstaller."""
     if hasattr(sys, "_MEIPASS"):
         return os.path.join(sys._MEIPASS, relative_path)
     base_dir = os.path.dirname(os.path.abspath(__file__))
     return os.path.join(base_dir, relative_path)
 
-# Módulos do Grimório
+# Módulos do Grimório Mobile
 from theme import (
     BG_DARK, BG_SURFACE, GOLD_PRIMARY, GOLD_LIGHT,
     PURPLE_PRIMARY, PURPLE_LIGHT, TEXT_PRIMARY, get_dark_theme, get_theme_colors
@@ -33,13 +32,13 @@ from tabs.tab_forja import criar_aba_forja
 from tabs.tab_foco import criar_aba_foco
 
 def main(page: ft.Page):
-    """Ponto de Entrada Oficial Síncrono do Grimório."""
+    """Ponto de Entrada Oficial Síncrono do Grimório Mobile."""
     
     cfg = storage.obter_configuracoes()
     tema_atual = cfg.get("tema_atual", "Dark Fantasy Dourado")
     cores = get_theme_colors(tema_atual)
 
-    # 1. Configurações Oficiais da Janela
+    # 1. Configurações da Página Mobile
     page.title = "Grimório"
     page.theme = get_dark_theme(tema_atual)
     page.theme_mode = ft.ThemeMode.DARK
@@ -47,33 +46,34 @@ def main(page: ft.Page):
     page.padding = 0
     page.spacing = 0
 
-    caminho_icone = resolve_path("assets/logo.ico")
-    
-    # Ícone da janela e executável
+    # Configurações de janela (apenas quando testado em Desktop/Dev)
     if hasattr(page, "window"):
-        page.window.width = 440
-        page.window.height = 860
-        page.window.min_width = 380
-        page.window.min_height = 680
-        if os.path.exists(caminho_icone):
-            try:
-                page.window.icon = caminho_icone
-            except Exception:
-                pass
-                
-    if hasattr(page, "window_icon") and os.path.exists(caminho_icone):
         try:
-            page.window_icon = caminho_icone
+            page.window.width = 420
+            page.window.height = 840
+            page.window.min_width = 360
+            page.window.min_height = 640
+            caminho_ico = resolve_path("assets/logo.ico")
+            if os.path.exists(caminho_ico):
+                page.window.icon = caminho_ico
         except Exception:
             pass
 
-    # 2. Inicialização dos Controles de Áudio Síncronos em page.overlay
-    audio_foco = ft.Audio(src=resolve_path("assets/som_foco.mp3"), autoplay=False)
-    audio_alerta = ft.Audio(src=resolve_path("assets/som_alerta.mp3"), autoplay=False)
-    page.overlay.append(audio_foco)
-    page.overlay.append(audio_alerta)
-    page.audio_foco = audio_foco
-    page.audio_alerta = audio_alerta
+    # 2. Inicialização dos Controles de Áudio em page.overlay
+    try:
+        som_foco_path = resolve_path("assets/som_foco.mp3")
+        som_alerta_path = resolve_path("assets/som_alerta.mp3")
+        
+        audio_foco = ft.Audio(src=som_foco_path, autoplay=False)
+        audio_alerta = ft.Audio(src=som_alerta_path, autoplay=False)
+        page.overlay.append(audio_foco)
+        page.overlay.append(audio_alerta)
+        page.audio_foco = audio_foco
+        page.audio_alerta = audio_alerta
+    except Exception as e:
+        print(f"[Áudio Mobile] Overlay: {e}")
+        page.audio_foco = None
+        page.audio_alerta = None
 
     # 3. Gerenciamento de Estado de Abas
     estado_app = {
@@ -98,7 +98,7 @@ def main(page: ft.Page):
         page.theme = get_dark_theme(tema_novo)
         page.bgcolor = novas_cores["bg_dark"]
 
-        # Atualiza os labels e cores da barra de navegação
+        # Atualiza labels e cores da barra de navegação
         nav_bar.destinations[0].label = nomes_abas.get("trono", "Trono")
         nav_bar.destinations[1].label = nomes_abas.get("quests", "Quests")
         nav_bar.destinations[2].label = nomes_abas.get("cofre", "Cofre")
@@ -147,7 +147,7 @@ def main(page: ft.Page):
         except Exception:
             pass
 
-    # 3. Barra de Navegação Inferior das 5 Abas
+    # 4. Barra de Navegação Inferior das 5 Abas Otimizada para Celular
     nomes_abas_iniciais = cfg.get("nomes_abas", {})
     nav_bar = ft.NavigationBar(
         destinations=[
@@ -180,10 +180,11 @@ def main(page: ft.Page):
         selected_index=0,
         bgcolor=cores["bg_surface"],
         indicator_color="#4C1D9580",
+        height=65,
         on_change=lambda e: trocar_aba(e.control.selected_index)
     )
 
-    # 4. Transição Fluida da Splash Screen para a Tela Principal
+    # 5. Transição Fluida da Splash Screen para a Tela Principal
     def entrar_no_reino():
         estado_app["em_splash"] = False
         page.clean()
@@ -204,7 +205,7 @@ def main(page: ft.Page):
         page.add(layout_principal)
         page.update()
 
-    # Inicia exibindo a Splash Screen com o Gatinho Cavaleiro
+    # Inicia exibindo a Splash Screen Mobile
     tela_splash = criar_splash_screen(on_entrar_click=entrar_no_reino)
     page.add(tela_splash)
     page.update()

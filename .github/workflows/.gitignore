@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Flet build output
+build/
+dist/
+
+# Ambientes virtuais
+.venv/
+venv/
+ENV/
+
+# Arquivos temporários de SO
+.DS_Store
+Thumbs.db
+*.tmp
